@@ -1,0 +1,11 @@
+apiVersion: v2
+name: audit
+description: A Helm chart for deploying the audit script
+version: 0.1.0
+
+# Variables that can be filled by the user
+values:
+  - token:
+      description: "Bearer token to access Rancher API"
+      value: ""
+      type: string
