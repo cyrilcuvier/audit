@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: audit-deployment
+  name: audit-script-deployment
+  labels:
+    app: audit-script
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: audit-deployment
+      app: audit-script
   template:
     metadata:
       labels:
-        app: audit-deployment
+        app: audit-script
     spec:
       containers:
-        - name: audit
-          image: "cyrilcuvier/audit:latest"
-          env:
-            - name: TOKEN
-              value: {{ .Values.token }}  # Utilisation de la valeur `token` depuis le fichier values.yaml
+      - name: audit-script
+        image: "docker.io/cyrilcuvier/audit:latest"
+        env:
+          - name: TOKEN
+            value: "{{ .Values.token }}"
