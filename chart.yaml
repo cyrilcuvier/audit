@@ -3,7 +3,7 @@ name: audit
 description: A Helm chart for deploying the audit script
 version: 0.1.0
 
-# Variables that can be filled by the user
+# Spécifie les variables qui peuvent être remplies par l'utilisateur dans l'interface Rancher
 values:
   - token:
       description: "Bearer token to access Rancher API"
