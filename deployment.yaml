@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: audit
+      app: audit-deployment
   template:
     metadata:
       labels:
-        app: audit
+        app: audit-deployment
     spec:
       containers:
-        - name: audit-container
-          image: cyrilcuvier/audit:latest  # Image contenant déjà le script
+        - name: audit
+          image: "cyrilcuvier/audit:latest"
           env:
             - name: TOKEN
-              value: "your_bearer_token_here"  # Remplace par ton token ici
+              value: {{ .Values.token }}  # Utilisation de la valeur `token` depuis le fichier values.yaml
