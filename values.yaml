@@ -1,4 +1,4 @@
 # values.yaml
 
-# Token Rancher
-token: "your-bearer-token-here"
+# Définit la clé mais sans valeur par défaut pour permettre à l'utilisateur de le remplir dans Rancher
+token: ""
